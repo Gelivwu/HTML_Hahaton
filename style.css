@@ -25,62 +25,39 @@ body {
     overflow: hidden;
     position: relative;
 
-    /* Многослойный градиент: несколько радиальных пятен разных оттенков фиолетового */
+    /* Многослойный градиент */
     background: 
-        radial-gradient(circle at 20% 30%, #8a2be2 0%, transparent 45%),
+        radial-gradient(circle at 20% 30%, #d92be2 0%, transparent 45%),
         radial-gradient(circle at 80% 20%, #b300ff 0%, transparent 40%),
         radial-gradient(circle at 70% 80%, #4a00a0 0%, transparent 50%),
         radial-gradient(circle at 30% 90%, #7004B8 0%, transparent 45%),
-        #5409AF; /* Базовый цвет фона */
+        #5409AF;
 
-    /* Растягиваем фон, чтобы пятна могли свободно двигаться */
     background-size: 200% 200%;
-
-    /* Плавная, долгая анимация перелива */
     animation: colorFlow 15s ease-in-out infinite;
 }
 
-/* Анимация перемещения цветовых пятен — создаёт эффект перелива */
+/* Анимация перелива */
 @keyframes colorFlow {
     0% {
         background-position: 
-            0% 0%, 
-            100% 0%, 
-            100% 100%, 
-            0% 100%, 
-            0% 0%;
+            0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%;
     }
     25% {
         background-position: 
-            50% 20%, 
-            60% 40%, 
-            40% 70%, 
-            50% 60%, 
-            0% 0%;
+            50% 20%, 60% 40%, 40% 70%, 50% 60%, 0% 0%;
     }
     50% {
         background-position: 
-            100% 50%, 
-            20% 80%, 
-            0% 50%, 
-            100% 30%, 
-            0% 0%;
+            100% 50%, 20% 80%, 0% 50%, 100% 30%, 0% 0%;
     }
     75% {
         background-position: 
-            50% 80%, 
-            60% 20%, 
-            70% 40%, 
-            40% 70%, 
-            0% 0%;
+            50% 80%, 60% 20%, 70% 40%, 40% 70%, 0% 0%;
     }
     100% {
         background-position: 
-            0% 0%, 
-            100% 0%, 
-            100% 100%, 
-            0% 100%, 
-            0% 0%;
+            0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%;
     }
 }
 
@@ -123,7 +100,7 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* Кнопка */
+/* Кнопка-ссылка */
 .weather-btn {
     font-family: 'K2D', sans-serif;
     font-size: 1.3rem;
@@ -136,6 +113,11 @@ h2 {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    /* Стили для ссылки, чтобы вела себя как кнопка */
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
 .weather-btn:hover {
@@ -191,11 +173,11 @@ h2 {
     border-color: #ffffff;
 }
 
-/* ====== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ====== */
+/* ====== АДАПТИВНОСТЬ ====== */
 @media (max-width: 600px) {
     .hero {
         padding: 60px 15px;
-        animation-duration: 18s; /* На телефонах медленнее */
+        animation-duration: 18s;
     }
 
     .weather-btn {
