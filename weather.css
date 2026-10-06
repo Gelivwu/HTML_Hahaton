@@ -38,10 +38,39 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: space-between;   /* равномерно распределяет блоки */
+    justify-content: space-between;
 }
 
 .current-weather { padding-bottom: 10px; }
+
+/* Кнопка "назад" */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    transform: translateX(-3px);
+}
+
+.back-btn:active {
+    transform: translateX(-1px);
+}
+
+.back-btn svg {
+    display: block;
+}
 
 .location h1 {
     font-family: 'K2D', sans-serif;
@@ -107,16 +136,14 @@ body {
     margin-top: 10px;
 }
 
-/* ========================================
-   БЛОК С ЧАСАМИ — БЕЗ ПРОКРУТКИ
-   ======================================== */
+/* Блок с часами — без прокрутки */
 .hourly-forecast {
     background-color: rgba(0, 0, 0, 0.35);
     border-radius: 4px;
     padding: 20px 15px;
-    flex: 1;                    /* растягивается */
+    flex: 1;
     display: flex;
-    align-items: center;        /* центрирует содержимое по вертикали */
+    align-items: center;
 }
 
 .hourly-scroll {
@@ -155,8 +182,8 @@ body {
     border-radius: 4px;
     padding: 20px 15px;
     gap: 10px;
-    flex: 1;                    /* растягивается */
-    align-items: center;        /* центрирует содержимое по вертикали */
+    flex: 1;
+    align-items: center;
 }
 
 .detail-item {
@@ -191,7 +218,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;   /* дни распределяются равномерно по высоте */
+    justify-content: space-between;
 }
 
 .day-item {
@@ -286,7 +313,7 @@ body {
 
     .hourly-forecast {
         padding: 15px 8px;
-        flex: none;             /* не растягивается на мобиле */
+        flex: none;
         display: block;
     }
     .hourly-scroll { gap: 2px; }
@@ -314,7 +341,7 @@ body {
     
     .weekly-forecast {
         padding: 15px;
-        justify-content: flex-start;  /* дни не растягиваются */
+        justify-content: flex-start;
     }
     .day-item { padding: 10px 0; }
     .day-name { font-size: 0.85rem; }
